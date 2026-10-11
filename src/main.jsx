@@ -1,11 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from 'react'; // <-- Add this line at the top
+import { render, screen } from '@testing-library/react';
+import MainContent from './MainContent';
+import { describe, it, expect } from 'vitest';
 
-import App from './App';
-import './index.css';
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+describe('MainContent', () => {
+  it('should render a button', () => {
+    render(<MainContent />);
+    expect(screen.getByRole('button')).toBeInTheDocument();
+  });
+  
+  // ... rest of your tests
+});
