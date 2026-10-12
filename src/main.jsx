@@ -1,4 +1,4 @@
-import React from 'react'; // <-- Add this line at the top
+import React from 'react'; // <-- Add this line
 import { render, screen } from '@testing-library/react';
 import MainContent from './MainContent';
 import { describe, it, expect } from 'vitest';
@@ -9,5 +9,8 @@ describe('MainContent', () => {
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
   
-  // ... rest of your tests
+  it('should show the help area after clicking the button', async () => {
+    render(<MainContent />);
+    // ... rest of your test
+  });
 });
